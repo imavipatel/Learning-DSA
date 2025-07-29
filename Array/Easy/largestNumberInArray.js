@@ -13,21 +13,20 @@ Explanation: The largest element in array is 99
 
 */
 
-const nums = [3, 3, 110, 99, -40]
-
-const nums1 = [3, 3, 6, 1]
-
 function largestNumberInArray(nums) {
-    let largestNum = -Infinity
-    for(let i=0; i < nums.length; i++){
-        if(nums[i] > largestNum){
-            largestNum = nums[i]
-        }
-       
+  let largestNum = -Infinity;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > largestNum) {
+      largestNum = nums[i];
     }
-    return largestNum
+  }
+  return largestNum;
 }
 
-console.log(largestNumberInArray(nums))
+const nums = [3, 3, 110, 99, -40];
 
-console.log(largestNumberInArray(nums1))
+const nums1 = [3, 3, 6, 1];
+
+console.log(largestNumberInArray(nums));
+
+console.log(largestNumberInArray(nums1));

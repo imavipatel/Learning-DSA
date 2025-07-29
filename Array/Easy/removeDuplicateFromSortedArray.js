@@ -29,10 +29,12 @@ nums is sorted in non-decreasing order.
 
 */
 
-// function removeDuplicateFromSortedArray(arr) {
+//Two Pointer approach
+
+// function removeDuplicateFromSortedArray1(arr) {
 //   let x = 0;
-//   for (let i = 0; i < arr.length; i++) {
-//     if (arr[i] > arr[x]) {
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] != arr[x]) {
 //       x = x + 1;
 //       arr[x] = arr[i];
 //     }
@@ -42,8 +44,8 @@ nums is sorted in non-decreasing order.
 // }
 
 function removeDuplicateFromSortedArray(arr) {
-  let x = 0;
-  for (let i = 0; i < arr.length; i++) {
+  let x = 1;
+  for (let i = 1; i < arr.length; i++) {
     if (arr[i] !== arr[i - 1]) {
       arr[x] = arr[i];
       x++;

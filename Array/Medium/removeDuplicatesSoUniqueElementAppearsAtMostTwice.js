@@ -31,4 +31,22 @@ Constraints:
 -104 <= nums[i] <= 104
 nums is sorted in non-decreasing order.
 
-*
+*/
+
+function removeDuplicateFromSortedArrayII(arr) {
+  let x = 0;
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[x] != arr[i + 1]) {
+      x++;
+      arr[x] = arr[i];
+    }
+  }
+  console.log(arr);
+  return x + 1;
+}
+
+const arr1 = [1, 1, 1, 2, 2, 3];
+const arr2 = [0, 0, 1, 1, 1, 1, 2, 3, 3];
+
+console.log(removeDuplicateFromSortedArrayII(arr1));
+console.log(removeDuplicateFromSortedArrayII(arr2));

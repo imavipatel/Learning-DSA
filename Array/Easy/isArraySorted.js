@@ -31,7 +31,9 @@ function isArraySorted(arr) {
 const arr1 = [1, 2, 3, 4, 5];
 const arr2 = [5, 4, 3, 2, 1];
 const arr3 = [5, 4, 6, 7, 8];
+const arr4 = [1, 2, 1, 4, 5];
 
 console.log(isArraySorted(arr1));
 console.log(isArraySorted(arr2));
+console.log(isArraySorted(arr3));
 console.log(isArraySorted(arr3));
