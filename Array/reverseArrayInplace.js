@@ -14,10 +14,32 @@ Output:[1,2,1]
 
 */
 
-function reverseArray(arr) {
-  for (let i = 0; i < arr.length - 1; i++) {
-    arr[i] = arr[arr.length - 1];
+function reverseArrayOne(arr) {
+  for (let i = 0; i < Math.floor(arr.length / 2); i++) {
+    let temp = arr[i];
+    arr[i] = arr[arr.length - 1 - i];
+    arr[arr.length - 1 - i] = temp;
   }
+  return arr;
 }
 
-console.log(reverseArray([1, 2, 3, 4, 5]));
+function reverseArrayTwo(arr) {
+  const mid = Math.floor(arr.length / 2);
+  let left = 0;
+  let right = arr.length - 1;
+  while (left < mid) {
+    let temp = arr[left];
+    arr[left] = arr[right];
+    arr[right] = temp;
+    left++;
+    right--;
+  }
+  return arr;
+}
+
+console.log(reverseArrayOne([1, 2, 3, 4, 5]));
+console.log(reverseArrayTwo([1, 2, 3, 4, 5]));
+console.log(reverseArrayOne([1, 2, 1, 1, 5, 1]));
+console.log(reverseArrayTwo([1, 2, 1, 1, 5, 1]));
+console.log(reverseArrayOne([1, 2, 3, 1, 5, 1]));
+console.log(reverseArrayTwo([1, 2, 3, 1, 5, 1]));

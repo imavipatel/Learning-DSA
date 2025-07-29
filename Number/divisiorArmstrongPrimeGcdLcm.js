@@ -151,6 +151,25 @@ Output:6
 
 */
 
+console.log("Greatest Common Divisor==========>");
+
+function greatestCommonDivisor(n1, n2) {
+  let gcd = 1;
+  for (let i = 1; i <= Math.min(n1, n2); i++) {
+    if (n1 % i == 0 && n2 % i == 0) {
+      if (gcd < i) {
+        gcd = i;
+      }
+    }
+  }
+
+  return gcd;
+}
+
+console.log(greatestCommonDivisor(4, 6));
+console.log(greatestCommonDivisor(9, 8));
+console.log(greatestCommonDivisor(6, 12));
+
 /*
  
 5.  You are given two integers n1 and n2. You need find the Lowest Common Multiple (LCM) of the two given numbers. Return the LCM of the two numbers.
@@ -169,3 +188,22 @@ Input: n1 = 4, n2 = 12
 Output:12
 
 */
+
+console.log("Lowest Common Multiple==========>");
+
+function lowestCommonMultiple(n1, n2) {
+  let lcm = 1;
+  for (let i = 1; i <= n1 * n2; i++) {
+    if (i * n1 == 0 && i * n2 == 0) {
+      if (lcm < i) {
+        lcm = i;
+      }
+    }
+  }
+
+  return lcm;
+}
+
+console.log(lowestCommonMultiple(4, 6));
+console.log(lowestCommonMultiple(3, 5));
+console.log(lowestCommonMultiple(4, 12));
