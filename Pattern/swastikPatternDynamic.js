@@ -14,8 +14,10 @@
  *  *  *  *  *  *  *           *  * 
 
 
- i==Math.floor(mid/2)  && j== Math.floor(mid/2)||
-       i==Math.floor(mid/2) && j== Math.floor(mid)+3||
+i==Math.floor(mid/2)  && j== Math.floor(mid/2)||
+       i==Math.floor(mid/2)  && j== Math.floor(mid/2)+1||
+       i==Math.floor(mid/2)-1  && j== Math.floor(mid/2)||
+       i==Math.floor(mid/2)-1  && j== Math.floor(mid/2)+1||
        For center star in blank space
 
 */

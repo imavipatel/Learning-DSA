@@ -37,9 +37,28 @@ function reverseArrayTwo(arr) {
   return arr;
 }
 
+function reverseArrayThree(arr) {
+  let start = 0;
+  let end = arr.length - 1;
+  while (start < end) {
+    console.log("arr1", arr);
+    [arr[start], arr[end]] = [arr[end], arr[start]];
+    console.log("arr2", arr);
+    console.log("start - end 1", start, end);
+    start++;
+    end--;
+    console.log("start - end 2 ", start, end);
+  }
+
+  return arr;
+}
+
 console.log(reverseArrayOne([1, 2, 3, 4, 5]));
 console.log(reverseArrayTwo([1, 2, 3, 4, 5]));
+console.log(reverseArrayThree([1, 2, 3, 4, 5]));
 console.log(reverseArrayOne([1, 2, 1, 1, 5, 1]));
 console.log(reverseArrayTwo([1, 2, 1, 1, 5, 1]));
+console.log(reverseArrayThree([1, 2, 1, 1, 5, 1]));
 console.log(reverseArrayOne([1, 2, 3, 1, 5, 1]));
 console.log(reverseArrayTwo([1, 2, 3, 1, 5, 1]));
+console.log(reverseArrayThree([1, 2, 3, 1, 5, 1]));
