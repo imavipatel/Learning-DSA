@@ -46,3 +46,57 @@ const arr4 = [1, 5, 7, 8, 8];
 
 console.log(unionOfTwoSortedArrays(arr1, arr2));
 console.log(unionOfTwoSortedArrays(arr3, arr4));
+
+//Method 2
+
+console.log("Method 2 Union of two array by two pointer");
+
+function unionOfTwoSortedArraysTwoPointer(nums1, nums2) {
+  let i = 0,
+    j = 0;
+  const result = [];
+  while (i < nums1.length && j < nums2.length) {
+    //Avoid duplicates in result
+    const last = result[result.length - 1];
+
+    if (nums1[i] == nums2[j]) {
+      if (last !== nums1[i]) {
+        result.push(nums1[i]);
+      }
+      i++;
+      j++;
+    } else if (nums1[i] < nums2[j]) {
+      if (last !== nums1[i]) {
+        result.push(nums1[i]);
+      }
+      i++;
+    } else {
+      if (last !== nums2[j]) {
+        result.push(nums2[j]);
+      }
+      j++;
+    }
+  }
+  while (i < nums1.length) {
+    if (result[result.length - 1] !== nums1[i]) {
+      result.push(nums1[i]);
+    }
+    i++;
+  }
+  while (j < nums2.length) {
+    if (result[result.length - 1] !== nums2[j]) {
+      result.push(nums2[j]);
+    }
+    j++;
+  }
+  return result;
+}
+
+const nums1 = [1, 2, 3, 4, 5];
+const nums2 = [1, 2, 7];
+
+const nums3 = [3, 4, 6, 7, 9, 9];
+const nums4 = [1, 5, 7, 8, 8];
+
+console.log(unionOfTwoSortedArraysTwoPointer(nums1, nums2));
+console.log(unionOfTwoSortedArraysTwoPointer(nums3, nums4));
