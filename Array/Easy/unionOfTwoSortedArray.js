@@ -38,14 +38,14 @@ function unionOfTwoSortedArrays(arr1, arr2) {
   return union;
 }
 
-const arr1 = [1, 2, 3, 4, 5];
+const arr1 = [5, 1, 2, 3, 4, 5];
 const arr2 = [1, 2, 7];
 
 const arr3 = [3, 4, 6, 7, 9, 9];
 const arr4 = [1, 5, 7, 8, 8];
 
-console.log(unionOfTwoSortedArrays(arr1, arr2));
-console.log(unionOfTwoSortedArrays(arr3, arr4));
+// console.log(unionOfTwoSortedArrays(arr1, arr2));
+// console.log(unionOfTwoSortedArrays(arr3, arr4));
 
 //Method 2
 
@@ -89,7 +89,6 @@ function unionOfTwoSortedArraysTwoPointer(nums1, nums2) {
     }
     j++;
   }
-  return result;
 }
 
 const nums1 = [1, 2, 3, 4, 5];
@@ -99,4 +98,4 @@ const nums3 = [3, 4, 6, 7, 9, 9];
 const nums4 = [1, 5, 7, 8, 8];
 
 console.log(unionOfTwoSortedArraysTwoPointer(nums1, nums2));
-console.log(unionOfTwoSortedArraysTwoPointer(nums3, nums4));
+// console.log(unionOfTwoSortedArraysTwoPointer(nums3, nums4));
