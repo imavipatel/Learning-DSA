@@ -41,6 +41,8 @@ function longestSubarrayWithSumKUsingBruteForce(arr, k) {
   return length;
 }
 
+//With two loop
+
 function longestSubarrayWithSumKUsingBruteForceTwo(arr, k) {
   let n = arr.length;
   let length = 0;
@@ -56,9 +58,78 @@ function longestSubarrayWithSumKUsingBruteForceTwo(arr, k) {
   return length;
 }
 
+//Using Hashing Method
+
+function longestSubarrayWithSumKUsingHashing(arr, k) {
+  let n = arr.length;
+  let maxLength = 0;
+  let sum = 0;
+  let sumMap = new Map();
+
+  for (let i = 0; i < n; i++) {
+    sum += arr[i];
+
+    if (sum === k) {
+      maxLength = i + 1;
+    }
+
+    if (sumMap.has(sum - k)) {
+      maxLength = Math.max(maxLength, i - sumMap.get(sum - k));
+    }
+
+    if (!sumMap.has(sum)) {
+      sumMap.set(sum, i);
+    }
+  }
+
+  return maxLength;
+}
+
+//Using two pointer
+
+function longestSubarrayWithSumKUsingTwoPointer(arr, k) {
+  let n = arr.length;
+  let left = 0;
+  let right = 0;
+  let maxLength = 0;
+  let sum = 0;
+
+  for (right = 0; right < n; right++) {
+    sum += arr[right];
+
+    while (sum > k && left <= right) {
+      sum -= arr[left];
+      left++;
+    }
+
+    if (sum === k) {
+      maxLength = Math.max(maxLength, right - left + 1);
+    }
+  }
+
+  return maxLength;
+}
+
 let arr1 = [2, 3, 5, 1, 9];
 let k1 = 10;
+let arr2 = [10, 5, 2, 7, 1, 9];
+let k2 = 15;
+let arr3 = [-3, 2, 1];
+let k3 = 6;
 
+console.log("Brute force approach (Using three loops)");
 console.log(longestSubarrayWithSumKUsingBruteForce(arr1, k1));
+console.log(longestSubarrayWithSumKUsingBruteForce(arr2, k2));
+console.log(longestSubarrayWithSumKUsingBruteForce(arr3, k3));
 console.log("Brute force approach (Using two loops)");
 console.log(longestSubarrayWithSumKUsingBruteForceTwo(arr1, k1));
+console.log(longestSubarrayWithSumKUsingBruteForceTwo(arr2, k2));
+console.log(longestSubarrayWithSumKUsingBruteForceTwo(arr3, k3));
+console.log("Hashing approach");
+console.log(longestSubarrayWithSumKUsingHashing(arr1, k1));
+console.log(longestSubarrayWithSumKUsingHashing(arr2, k2));
+console.log(longestSubarrayWithSumKUsingHashing(arr3, k3));
+console.log("Two pointer approach");
+console.log(longestSubarrayWithSumKUsingTwoPointer(arr1, k1));
+console.log(longestSubarrayWithSumKUsingTwoPointer(arr2, k2));
+console.log(longestSubarrayWithSumKUsingTwoPointer(arr3, k3));
