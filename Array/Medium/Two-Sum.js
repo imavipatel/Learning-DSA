@@ -68,7 +68,7 @@ function twoSumUsingTwoPointers(arr, target) {
   while (left < right) {
     const sum = arr[left][0] + arr[right][0];
     if (sum === target) {
-      return [arr[left][1], arr[right][1]].sort((a, b) => a - b);
+      return [arr[left][1], arr[right][1]];
     } else if (sum < target) {
       left++;
     } else {
